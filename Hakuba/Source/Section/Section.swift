@@ -19,6 +19,7 @@ open class Section {
     private let bumpTracker = BumpTracker()
     
     internal(set) var index: Int = 0
+    var name: String
     
     var isChanged: Bool {
         return bumpTracker.isChanged
@@ -42,7 +43,9 @@ open class Section {
         return cellmodels.get(at: index)
     }
     
-    public init() {}
+    public init(_ name: String = "") {
+        self.name = name
+    }
     
     @discardableResult
     open func bump(_ animation: UITableViewRowAnimation = .none) -> Self {
