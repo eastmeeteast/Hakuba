@@ -26,6 +26,7 @@ open class CellModel {
     open var editable = false
     open var editingStyle: UITableViewCellEditingStyle = .none
     open var shouldHighlight = true
+    var name: String = ""
     
     public init<T: Cell & CellType>(cell: T.Type, height: CGFloat = UITableViewAutomaticDimension, selectionHandler: ((Cell) -> Void)? = nil) {
         self.reuseIdentifier = cell.reuseIdentifier
