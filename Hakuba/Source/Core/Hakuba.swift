@@ -72,6 +72,12 @@ final public class Hakuba: NSObject {
     public func getSection(at index: Int) -> Section? {
         return sections.get(at: index)
     }
+
+    public func getSection(_ name: String) -> Section? {
+        return sections.first(where: { section -> Bool in
+            return section.name == name
+        })
+    }
     
     public func getSection<T: RawRepresentable & SectionIndexType>(at index: T) -> Section? {
         return getSection(at: index.rawValue)

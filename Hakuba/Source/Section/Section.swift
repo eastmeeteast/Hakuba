@@ -42,6 +42,12 @@ open class Section {
     open subscript(index: Int) -> CellModel? {
         return cellmodels.get(at: index)
     }
+
+    open subscript(name: String) -> CellModel? {
+        return cellmodels.first(where: { cellmodel -> Bool in
+            return cellmodel.name == name
+        })
+    }
     
     public init(_ name: String = "") {
         self.name = name
